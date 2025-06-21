@@ -1,0 +1,9 @@
+site_name: Localart
+theme:
+  name: material
+extra_css:
+  - stylesheets/extra.css
+
+plugins:
+  - search
+  - blog
