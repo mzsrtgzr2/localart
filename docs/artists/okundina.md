@@ -2,6 +2,8 @@
 
 **Genre:** Modern
 
+**City:** Tel Aviv
+
 **Biography:**
 Olga Kundina is a contemporary artist known for her vibrant use of color
 

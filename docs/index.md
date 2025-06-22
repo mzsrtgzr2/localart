@@ -1,4 +1,4 @@
-# Artists Gallery
+# Search
 
 <!-- Map of Israel -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -88,13 +88,13 @@ function filterArtists() {
 
   <div class="artist-card" data-city="Hod Hasharon" data-area="" data-lat="32.1557" data-lon="34.8932" style="text-align:center; width:220px; margin-bottom:32px;">
     <a href="/artists/mosheroth/">
-      <img src="/assets/artists/mosheroth/1.png" alt="Moshe Roth" style="width:200px; height:200px; object-fit:cover; border-radius:8px; box-shadow:0 2px 8px #0001;" />
+      <img src="/assets/artists/mosheroth/2.png" alt="Moshe Roth" style="width:200px; height:200px; object-fit:cover; border-radius:8px; box-shadow:0 2px 8px #0001;" />
     </a>
     <div style="margin-top:8px; font-weight:bold; font-size:1.1em;">
       <a href="/artists/mosheroth/" style="text-decoration:none; color:inherit;">Moshe Roth</a>
     </div>
     
-    <div style="font-size:0.9em; color:#666;">Sunset Over the Valley</div>
+    <div style="font-size:0.9em; color:#666;">Morning Reflections</div>
     
     
     <div style="font-size:0.85em; color:#888; margin-top:2px;">
@@ -105,13 +105,13 @@ function filterArtists() {
 
   <div class="artist-card" data-city="Tel Aviv" data-area="" data-lat="32.0853" data-lon="34.7818" style="text-align:center; width:220px; margin-bottom:32px;">
     <a href="/artists/okundina/">
-      <img src="/assets/artists/okundina/Screenshot%202025-06-22%20at%2014.34.20.png" alt="Olga Kundina" style="width:200px; height:200px; object-fit:cover; border-radius:8px; box-shadow:0 2px 8px #0001;" />
+      <img src="/assets/artists/okundina/Screenshot%202025-06-22%20at%2014.34.57.png" alt="Olga Kundina" style="width:200px; height:200px; object-fit:cover; border-radius:8px; box-shadow:0 2px 8px #0001;" />
     </a>
     <div style="margin-top:8px; font-weight:bold; font-size:1.1em;">
       <a href="/artists/okundina/" style="text-decoration:none; color:inherit;">Olga Kundina</a>
     </div>
     
-    <div style="font-size:0.9em; color:#666;">Blue Dream</div>
+    <div style="font-size:0.9em; color:#666;">Urban Flow</div>
     
     
     <div style="font-size:0.85em; color:#888; margin-top:2px;">

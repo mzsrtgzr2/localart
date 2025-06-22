@@ -16,6 +16,7 @@ def generate_markdown(artist, template):
     data = {
         'name': artist['name'],
         'genre': artist.get('genre', 'Unknown'),
+        'city': artist.get('city', ''),
         'biography': artist.get('biography', ''),
         'paintings': artist.get('paintings', []),
         'contact': artist.get('contact', {}),

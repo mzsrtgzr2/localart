@@ -38,3 +38,8 @@
   position: relative;
   z-index: 1;
 }
+
+/* Hide the site title in the vertical (sidebar) menu for Material theme */
+.md-nav__title {
+  display: none !important;
+}
