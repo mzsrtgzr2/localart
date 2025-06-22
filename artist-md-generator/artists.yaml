@@ -24,4 +24,10 @@ artists:
         size: "50x60cm"
         medium: "Mixed media"
         date: "2025-06-03"
-  
+  - name: "Olga Kundina"
+    slug: "okundina"
+    genre: "Modern"
+    biography: "Olga Kundina is a contemporary artist known for her vibrant use of color"
+    contact:
+      instagram: "https://www.instagram.com/okundina/"
+    images: []

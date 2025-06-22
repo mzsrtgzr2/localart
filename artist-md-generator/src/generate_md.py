@@ -18,11 +18,19 @@ def generate_markdown(artist, template):
     return template.render(**data)
 
 def generate_index_md(artists, output_path, env):
-    # Collect (artist, image) pairs
+    # Collect (artist, image, city, area) pairs
     showcase = []
+    cities = set()
+    areas = set()
     for artist in artists:
         slug = artist.get('slug', artist['name'].replace(' ', '_').lower())
         images = artist.get('images', [])
+        city = artist.get('city', '')
+        area = artist.get('area', '')
+        if city:
+            cities.add(city)
+        if area:
+            areas.add(area)
         if images:
             img = random.choice(images)
             showcase.append({
@@ -30,11 +38,13 @@ def generate_index_md(artists, output_path, env):
                 'slug': slug,
                 'img_file': img['file'],
                 'img_title': img.get('title', ''),
+                'city': city,
+                'area': area,
             })
     # Render index
     template = env.get_template('index_template.md.j2')
     with open(output_path, 'w') as f:
-        f.write(template.render(showcase=showcase))
+        f.write(template.render(showcase=showcase, cities=sorted(cities), areas=sorted(areas)))
 
 
 def main():
