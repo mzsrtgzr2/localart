@@ -6,4 +6,3 @@ extra_css:
 
 plugins:
   - search
-  - blog

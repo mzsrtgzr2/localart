@@ -1,0 +1,23 @@
+/* Make the header background almost white and text dark for Material theme */
+.md-header, .md-header__inner, .md-header__button, .md-tabs {
+  background: #fcfcfc !important;
+  color: #222 !important;
+}
+
+.md-header__title, .md-header__topic {
+  color: #222 !important;
+}
+
+/* Fix search bar background and text color */
+.md-search__form, .md-search__input, .md-search__output {
+  background: #fff !important;
+  color: #222 !important;
+}
+
+.md-search__input::placeholder {
+  color: #888 !important;
+}
+
+.md-search__icon, .md-search__output {
+  color: #222 !important;
+}
