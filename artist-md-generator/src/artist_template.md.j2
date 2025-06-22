@@ -1,0 +1,38 @@
+<h1>{{ name }}</h1>
+
+**Genre:** {{ genre }}
+
+**Biography:**
+{{ biography }}
+
+{% if images %}
+## Showcase
+<div style="display: flex; flex-wrap: wrap; gap: 16px;">
+{% for img in images %}
+  <div style="text-align:center; margin-bottom:16px;">
+    <a href="/assets/artists/{{ slug }}/{{ img.file | urlencode }}" target="_blank">
+      <img src="/assets/artists/{{ slug }}/{{ img.file | urlencode }}" alt="{{ name }}" style="width:200px; height:auto; object-fit:cover; border-radius:8px; display:block; margin:0 auto;" />
+    </a>
+    <div style="font-size:0.9em; margin-top:4px;">
+      <b>{{ img.title }}</b><br>
+      Size: {{ img.size }}<br>
+      Medium: {{ img.medium }}<br>
+      Date: {{ img.date }}
+    </div>
+  </div>
+{% endfor %}
+</div>
+{% endif %}
+
+{% if contact %}
+## Contact Information
+<ul>
+{% for key, value in contact.items() %}
+  {% if key in ['instagram', 'facebook', 'twitter', 'website'] %}
+    <li><b>{{ key.capitalize() }}:</b> <a href="{{ value }}" target="_blank">{{ value }}</a></li>
+  {% else %}
+    <li><b>{{ key.capitalize() }}:</b> {{ value }}</li>
+  {% endif %}
+{% endfor %}
+</ul>
+{% endif %}

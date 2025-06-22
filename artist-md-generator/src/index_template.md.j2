@@ -1,0 +1,106 @@
+# Artists Gallery
+
+<!-- Map of Israel -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<div id="artist-map" style="height: 350px; margin-bottom: 32px; border-radius: 8px; overflow: hidden;"></div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+var map, markers = [], artistData;
+document.addEventListener('DOMContentLoaded', function() {
+  map = L.map('artist-map').setView([31.5, 34.8], 8); // Center on Israel
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 18,
+    attribution: '© OpenStreetMap contributors'
+  }).addTo(map);
+  artistData = {{ map_points | tojson }};
+  artistData.forEach(function(artist) {
+    var marker = L.marker([artist.lat, artist.lon]).addTo(map);
+    marker.bindPopup('<b>' + artist.artist_name + '</b><br>' + (artist.city || '') + (artist.area ? ', ' + artist.area : ''));
+    marker.on('click', function() {
+      filterArtistsByLocation(artist.lat, artist.lon);
+    });
+    markers.push({ marker: marker, lat: artist.lat, lon: artist.lon, city: artist.city, area: artist.area });
+  });
+  window.resetArtistFilter = function() {
+    document.getElementById('city-filter').value = '';
+    document.getElementById('area-filter').value = '';
+    filterArtists();
+    map.setView([31.5, 34.8], 8);
+  }
+});
+function filterArtistsByLocation(lat, lon) {
+  var cards = document.querySelectorAll('.artist-card');
+  cards.forEach(function(card) {
+    var clat = card.getAttribute('data-lat');
+    var clon = card.getAttribute('data-lon');
+    card.style.display = (clat == lat && clon == lon) ? '' : 'none';
+  });
+  map.setView([lat, lon], 12);
+}
+function filterArtists() {
+  var city = document.getElementById('city-filter').value;
+  var area = document.getElementById('area-filter').value;
+  var cards = document.querySelectorAll('.artist-card');
+  var found = false;
+  var bounds = [];
+  cards.forEach(function(card) {
+    var match = true;
+    if (city && card.getAttribute('data-city') !== city) match = false;
+    if (area && card.getAttribute('data-area') !== area) match = false;
+    card.style.display = match ? '' : 'none';
+    if (match && card.getAttribute('data-lat') && card.getAttribute('data-lon')) {
+      bounds.push([parseFloat(card.getAttribute('data-lat')), parseFloat(card.getAttribute('data-lon'))]);
+      found = true;
+    }
+  });
+  if (found && bounds.length > 0) {
+    if (bounds.length === 1) {
+      map.setView(bounds[0], 12);
+    } else {
+      map.fitBounds(bounds, {padding: [30, 30]});
+    }
+  } else {
+    map.setView([31.5, 34.8], 8);
+  }
+}
+</script>
+
+<!-- Filter UI -->
+<div style="margin-bottom: 24px;">
+  <label for="city-filter"><b>Filter by City:</b></label>
+  <select id="city-filter" onchange="filterArtists()">
+    <option value="">All Cities</option>
+    {% for city in cities %}
+      <option value="{{ city }}">{{ city }}</option>
+    {% endfor %}
+  </select>
+  <label for="area-filter" style="margin-left:16px;"><b>Filter by Area:</b></label>
+  <select id="area-filter" onchange="filterArtists()">
+    <option value="">All Areas</option>
+    {% for area in areas %}
+      <option value="{{ area }}">{{ area }}</option>
+    {% endfor %}
+  </select>
+  <button onclick="resetArtistFilter()" style="margin-left:16px;">Reset</button>
+</div>
+
+<div id="artist-grid" style="display: flex; flex-wrap: wrap; gap: 32px; justify-content: flex-start;">
+{% for entry in showcase %}
+  <div class="artist-card" data-city="{{ entry.city }}" data-area="{{ entry.area }}" data-lat="{{ entry.lat }}" data-lon="{{ entry.lon }}" style="text-align:center; width:220px; margin-bottom:32px;">
+    <a href="/artists/{{ entry.slug }}/">
+      <img src="/assets/artists/{{ entry.slug }}/{{ entry.img_file | urlencode }}" alt="{{ entry.artist_name }}" style="width:200px; height:200px; object-fit:cover; border-radius:8px; box-shadow:0 2px 8px #0001;" />
+    </a>
+    <div style="margin-top:8px; font-weight:bold; font-size:1.1em;">
+      <a href="/artists/{{ entry.slug }}/" style="text-decoration:none; color:inherit;">{{ entry.artist_name }}</a>
+    </div>
+    {% if entry.img_title %}
+    <div style="font-size:0.9em; color:#666;">{{ entry.img_title }}</div>
+    {% endif %}
+    {% if entry.city or entry.area %}
+    <div style="font-size:0.85em; color:#888; margin-top:2px;">
+      {% if entry.city %}{{ entry.city }}{% endif %}{% if entry.city and entry.area %}, {% endif %}{% if entry.area %}{{ entry.area }}{% endif %}
+    </div>
+    {% endif %}
+  </div>
+{% endfor %}
+</div>
