@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     maxZoom: 18,
     attribution: '© OpenStreetMap contributors'
   }).addTo(map);
-  artistData = [];
+  artistData = [{"area": "", "artist_name": "Moshe Roth", "city": "Hod Hasharon", "lat": 32.1557, "lon": 34.8932, "slug": "mosheroth"}, {"area": "", "artist_name": "Olga Kundina", "city": "Tel Aviv", "lat": 32.0853, "lon": 34.7818, "slug": "okundina"}];
   artistData.forEach(function(artist) {
     var marker = L.marker([artist.lat, artist.lon]).addTo(map);
     marker.bindPopup('<b>' + artist.artist_name + '</b><br>' + (artist.city || '') + (artist.area ? ', ' + artist.area : ''));
@@ -86,7 +86,7 @@ function filterArtists() {
 
 <div id="artist-grid" style="display: flex; flex-wrap: wrap; gap: 32px; justify-content: flex-start;">
 
-  <div class="artist-card" data-city="Hod Hasharon" data-area="" data-lat="None" data-lon="None" style="text-align:center; width:220px; margin-bottom:32px;">
+  <div class="artist-card" data-city="Hod Hasharon" data-area="" data-lat="32.1557" data-lon="34.8932" style="text-align:center; width:220px; margin-bottom:32px;">
     <a href="/artists/mosheroth/">
       <img src="/assets/artists/mosheroth/1.png" alt="Moshe Roth" style="width:200px; height:200px; object-fit:cover; border-radius:8px; box-shadow:0 2px 8px #0001;" />
     </a>
@@ -103,15 +103,15 @@ function filterArtists() {
     
   </div>
 
-  <div class="artist-card" data-city="Tel Aviv" data-area="" data-lat="None" data-lon="None" style="text-align:center; width:220px; margin-bottom:32px;">
+  <div class="artist-card" data-city="Tel Aviv" data-area="" data-lat="32.0853" data-lon="34.7818" style="text-align:center; width:220px; margin-bottom:32px;">
     <a href="/artists/okundina/">
-      <img src="/assets/artists/okundina/Screenshot%202025-06-22%20at%2014.35.46.png" alt="Olga Kundina" style="width:200px; height:200px; object-fit:cover; border-radius:8px; box-shadow:0 2px 8px #0001;" />
+      <img src="/assets/artists/okundina/Screenshot%202025-06-22%20at%2014.34.20.png" alt="Olga Kundina" style="width:200px; height:200px; object-fit:cover; border-radius:8px; box-shadow:0 2px 8px #0001;" />
     </a>
     <div style="margin-top:8px; font-weight:bold; font-size:1.1em;">
       <a href="/artists/okundina/" style="text-decoration:none; color:inherit;">Olga Kundina</a>
     </div>
     
-    <div style="font-size:0.9em; color:#666;">Spring Garden</div>
+    <div style="font-size:0.9em; color:#666;">Blue Dream</div>
     
     
     <div style="font-size:0.85em; color:#888; margin-top:2px;">
