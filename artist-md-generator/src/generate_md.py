@@ -2,6 +2,8 @@ import yaml
 import os
 import urllib.parse
 import random
+import re
+import requests
 from jinja2 import Environment, FileSystemLoader
 
 def load_city_coords():
@@ -11,17 +13,57 @@ def load_city_coords():
             return yaml.safe_load(f)
     return {}
 
+def fetch_instagram_profile_image(username):
+    try:
+        url = f"https://www.instagram.com/{username}/?__a=1&__d=dis"
+        headers = {'User-Agent': 'Mozilla/5.0'}
+        resp = requests.get(url, headers=headers, timeout=5)
+        if resp.status_code == 200:
+            data = resp.json()
+            # Instagram's public API changes often; this works as of 2024
+            if 'graphql' in data and 'user' in data['graphql']:
+                return data['graphql']['user'].get('profile_pic_url_hd')
+        return None
+    except Exception:
+        return None
+
+def extract_instagram_username(url):
+    if not url:
+        return None
+    match = re.search(r"instagram.com/([A-Za-z0-9_.]+)/?", url)
+    if match:
+        return match.group(1)
+    return None
+
+def extract_instagram_profile(url):
+    if not url:
+        return None
+    match = re.search(r"instagram.com/([A-Za-z0-9_.]+)/?", url)
+    if match:
+        return f"https://instagram.com/{match.group(1)}"
+    return None
+
 def generate_markdown(artist, template):
     # Prepare data for template
+    instagram_url = None
+    instagram_img = None
+    contact = artist.get('contact', {})
+    if 'instagram' in contact:
+        username = extract_instagram_username(contact['instagram'])
+        if username:
+            instagram_url = f"https://instagram.com/{username}"
+            instagram_img = fetch_instagram_profile_image(username)
     data = {
         'name': artist['name'],
         'genre': artist.get('genre', 'Unknown'),
         'city': artist.get('city', ''),
         'biography': artist.get('biography', ''),
         'paintings': artist.get('paintings', []),
-        'contact': artist.get('contact', {}),
+        'contact': contact,
         'slug': artist.get('slug', artist['name'].replace(' ', '_').lower()),
-        'images': artist.get('images', [])
+        'images': artist.get('images', []),
+        'instagram_url': instagram_url,
+        'instagram_img': instagram_img
     }
     return template.render(**data)
 
