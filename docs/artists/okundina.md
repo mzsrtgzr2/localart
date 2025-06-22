@@ -1,7 +1,5 @@
 <h1>Olga Kundina
 
-  <a href="https://instagram.com/okundina" target="_blank" style="font-size:0.7em; margin-left:12px; vertical-align:middle;">[Instagram]</a>
-
 </h1>
 
 **Genre:** Modern

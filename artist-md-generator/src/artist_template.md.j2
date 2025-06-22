@@ -16,8 +16,8 @@
 <div style="display: flex; flex-wrap: wrap; gap: 16px;">
 {% for img in images %}
   <div style="text-align:center; margin-bottom:16px;">
-    <a href="/assets/artists/{{ slug }}/{{ img.file | urlencode }}" target="_blank">
-      <img src="/assets/artists/{{ slug }}/{{ img.file | urlencode }}" alt="{{ name }}" style="width:200px; height:auto; object-fit:cover; border-radius:8px; display:block; margin:0 auto;" />
+    <a href="{{ base_url }}/assets/artists/{{ slug }}/{{ img.file | urlencode }}" target="_blank">
+      <img src="{{ base_url }}/assets/artists/{{ slug }}/{{ img.file | urlencode }}" alt="{{ name }}" style="width:200px; height:auto; object-fit:cover; border-radius:8px; display:block; margin:0 auto;" />
     </a>
     <div style="font-size:0.9em; margin-top:4px;">
       <b>{{ img.title }}</b><br>
