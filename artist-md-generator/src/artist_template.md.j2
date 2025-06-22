@@ -1,6 +1,6 @@
 <h1>{{ name }}
-{% if instagram_img %}
-  <img src="{{ instagram_img }}" alt="Instagram profile image" style="width:40px; height:40px; border-radius:50%; margin-left:12px; vertical-align:middle; border:1px solid #ccc;" />
+{% if profile_img %}
+  <img src="{{ profile_img }}" alt="Profile image" style="width:40px; height:40px; border-radius:50%; margin-left:12px; vertical-align:middle; border:1px solid #ccc;" />
 {% endif %}
 </h1>
 
@@ -16,14 +16,29 @@
 <div style="display: flex; flex-wrap: wrap; gap: 16px;">
 {% for img in images %}
   <div style="text-align:center; margin-bottom:16px;">
-    <a href="{{ base_url }}/assets/artists/{{ slug }}/{{ img.file | urlencode }}" target="_blank">
+    <a href="{{ base_url }}/artists/{{ slug }}/image/{{ img.file | urlencode | replace('.png', '') | replace('.jpg', '') | replace('.jpeg', '') | replace('.webp', '') }}" style="position:relative; display:inline-block;">
       <img src="{{ base_url }}/assets/artists/{{ slug }}/{{ img.file | urlencode }}" alt="{{ name }}" style="width:200px; height:auto; object-fit:cover; border-radius:8px; display:block; margin:0 auto;" />
+      {% if img.sold %}
+        <span style="position:absolute; top:8px; left:8px; width:24px; height:24px; background:#e53935; border-radius:50%; display:inline-block; border:2px solid #fff;"></span>
+      {% endif %}
     </a>
     <div style="font-size:0.9em; margin-top:4px;">
       <b>{{ img.title }}</b><br>
       Size: {{ img.size }}<br>
       Medium: {{ img.medium }}<br>
-      Date: {{ img.date }}
+      Date: {{ img.date }}<br>
+      {% if img.sold %}
+      <span style="color:#e53935; font-weight:bold;">SOLD</span><br>
+      {% elif img.price %}
+      <span style="color:#388e3c; font-weight:bold;">Price: {{ img.price }} ₪</span><br>
+      {% endif %}
+      {% if img.tags %}
+      <div style="margin-top:4px;">
+        {% for tag in img.tags %}
+          <a href="{{ base_url }}/tags/{{ tag }}" style="background:#eee; color:#333; border-radius:4px; padding:2px 6px; margin-right:4px; font-size:0.85em; text-decoration:none;">{{ tag }}</a>
+        {% endfor %}
+      </div>
+      {% endif %}
     </div>
   </div>
 {% endfor %}

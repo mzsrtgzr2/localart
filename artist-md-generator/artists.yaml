@@ -6,25 +6,39 @@ artists:
     city: "Hod Hasharon"
     biography: "Vincent van Gogh was a Dutch post-impressionist painter who is among the most famous and influential figures in the history of Western art."
     contact:
+      phone: "+972-54-1234567"
       email: "mzsrtgzr2@gmail.com"
-      facebook: "https://www.facebook.com/mosheroth"
-      instagram: "https://www.instagram.com/mosheroth"
+      facebook: "https://www.facebook.com/mosherot"
+      instagram: "https://www.instagram.com/mzsrtgzr2"
     images:
       - file: "1.png"
         title: "Sunset Over the Valley"
         size: "40x50cm"
         medium: "Oil on canvas"
         date: "2024-01-15"
+        tags: [landscape, colorful, traditional]
       - file: "2.png"
         title: "Morning Reflections"
         size: "30x40cm"
         medium: "Acrylic on board"
         date: "2023-11-02"
+        tags: [nature, minimal, modern]
+        sold: false
       - file: "Screenshot 2025-06-03 at 22.39.08.png"
         title: "Abstract Night"
         size: "50x60cm"
         medium: "Mixed media"
         date: "2025-06-03"
+        tags: [abstract, surreal, colorful]
+        sold: false
+      - file: "WhatsApp Image 2025-06-23 at 00.07.24.jpeg"
+        title: "City Lights"
+        size: "60x80cm"
+        medium: "Digital art"
+        date: "2025-06-22"
+        tags: [urban, modern, vibrant]
+        sold: false
+      
   - name: "Olga Kundina"
     slug: "okundina"
     genre: "Modern"
@@ -38,28 +52,46 @@ artists:
         size: "60x80cm"
         medium: "Acrylic on canvas"
         date: "2024-05-10"
+        tags: [abstract, colorful, modern]
+        price: 2000
+        sold: true
       - file: "Screenshot 2025-06-22 at 14.34.32.png"
         title: "Red Harmony"
         size: "50x70cm"
         medium: "Oil on canvas"
         date: "2023-12-18"
+        tags: [abstract, vibrant, modern]
+        price: 1800
+        sold: false
       - file: "Screenshot 2025-06-22 at 14.34.47.png"
         title: "Golden Fields"
         size: "40x60cm"
         medium: "Mixed media"
         date: "2024-03-22"
+        tags: [landscape, nature, colorful]
+        price: 1600
+        sold: false
       - file: "Screenshot 2025-06-22 at 14.34.57.png"
         title: "Urban Flow"
         size: "30x40cm"
         medium: "Acrylic on board"
         date: "2025-01-05"
+        tags: [abstract, city, modern]
+        price: 1100
+        sold: false
       - file: "Screenshot 2025-06-22 at 14.35.11.png"
         title: "Silent Lake"
         size: "70x90cm"
         medium: "Oil on canvas"
         date: "2023-09-14"
+        tags: [landscape, water, serene]
+        price: 2500
+        sold: false
       - file: "Screenshot 2025-06-22 at 14.35.46.png"
         title: "Spring Garden"
         size: "60x60cm"
         medium: "Acrylic on canvas"
         date: "2024-07-21"
+        tags: [nature, flowers, colorful]
+        price: 1700
+        sold: false

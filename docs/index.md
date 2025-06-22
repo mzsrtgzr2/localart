@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   window.resetArtistFilter = function() {
     document.getElementById('city-filter').value = '';
-    document.getElementById('area-filter').value = '';
+    document.getElementById('tag-filter').value = '';
     filterArtists();
     map.setView([31.5, 34.8], 8);
   }
@@ -39,14 +39,17 @@ function filterArtistsByLocation(lat, lon) {
 }
 function filterArtists() {
   var city = document.getElementById('city-filter').value;
-  var area = document.getElementById('area-filter').value;
+  var tag = document.getElementById('tag-filter').value;
   var cards = document.querySelectorAll('.artist-card');
   var found = false;
   var bounds = [];
   cards.forEach(function(card) {
     var match = true;
     if (city && card.getAttribute('data-city') !== city) match = false;
-    if (area && card.getAttribute('data-area') !== area) match = false;
+    if (tag) {
+      var tags = card.getAttribute('data-tags').split(',');
+      if (tags.indexOf(tag) === -1) match = false;
+    }
     card.style.display = match ? '' : 'none';
     if (match && card.getAttribute('data-lat') && card.getAttribute('data-lon')) {
       bounds.push([parseFloat(card.getAttribute('data-lat')), parseFloat(card.getAttribute('data-lon'))]);
@@ -76,9 +79,39 @@ function filterArtists() {
       <option value="Tel Aviv">Tel Aviv</option>
     
   </select>
-  <label for="area-filter" style="margin-left:16px;"><b>Filter by Area:</b></label>
-  <select id="area-filter" onchange="filterArtists()">
-    <option value="">All Areas</option>
+  <label for="tag-filter" style="margin-left:16px;"><b>Filter by Tag:</b></label>
+  <select id="tag-filter" onchange="filterArtists()">
+    <option value="">All Tags</option>
+    
+      <option value="abstract">abstract</option>
+    
+      <option value="animals">animals</option>
+    
+      <option value="black_and_white">black_and_white</option>
+    
+      <option value="classic">classic</option>
+    
+      <option value="colorful">colorful</option>
+    
+      <option value="digital">digital</option>
+    
+      <option value="landscape">landscape</option>
+    
+      <option value="minimal">minimal</option>
+    
+      <option value="modern">modern</option>
+    
+      <option value="nature">nature</option>
+    
+      <option value="people">people</option>
+    
+      <option value="portrait">portrait</option>
+    
+      <option value="surreal">surreal</option>
+    
+      <option value="traditional">traditional</option>
+    
+      <option value="urban">urban</option>
     
   </select>
   <button onclick="resetArtistFilter()" style="margin-left:16px;">Reset</button>
@@ -86,38 +119,102 @@ function filterArtists() {
 
 <div id="artist-grid" style="display: flex; flex-wrap: wrap; gap: 32px; justify-content: flex-start;">
 
-  <div class="artist-card" data-city="Hod Hasharon" data-area="" data-lat="32.1557" data-lon="34.8932" style="text-align:center; width:220px; margin-bottom:32px;">
-    <a href="/localart/artists/mosheroth/">
-      <img src="/localart/assets/artists/mosheroth/Screenshot%202025-06-03%20at%2022.39.08.png" alt="Moshe Roth" style="width:200px; height:200px; object-fit:cover; border-radius:8px; box-shadow:0 2px 8px #0001;" />
+  <div class="artist-card" data-city="Hod Hasharon" data-lat="32.1557" data-lon="34.8932" data-tags="nature,minimal,modern" style="text-align:center; width:220px; margin-bottom:32px; position:relative;">
+    <a href="/localart/artists/mosheroth/" style="display:inline-block;">
+      <span style="position:relative; display:inline-block;">
+        <img src="/localart/assets/artists/mosheroth/2.png" alt="Moshe Roth" style="width:200px; height:200px; object-fit:cover; border-radius:8px; box-shadow:0 2px 8px #0001;" />
+      </span>
     </a>
     <div style="margin-top:8px; font-weight:bold; font-size:1.1em;">
       <a href="/localart/artists/mosheroth/" style="text-decoration:none; color:inherit;">Moshe Roth</a>
     </div>
     
-    <div style="font-size:0.9em; color:#666;">Abstract Night</div>
+    <div style="font-size:0.9em; color:#666;">Morning Reflections</div>
     
     
-    <div style="font-size:0.85em; color:#888; margin-top:2px;">
-      Hod Hasharon
+    <div style="margin-top:4px;">
+      
+        <a href="/localart/tags/nature" style="background:#eee; color:#333; border-radius:4px; padding:2px 6px; margin-right:4px; font-size:0.85em; text-decoration:none;">nature</a>
+      
+        <a href="/localart/tags/minimal" style="background:#eee; color:#333; border-radius:4px; padding:2px 6px; margin-right:4px; font-size:0.85em; text-decoration:none;">minimal</a>
+      
+        <a href="/localart/tags/modern" style="background:#eee; color:#333; border-radius:4px; padding:2px 6px; margin-right:4px; font-size:0.85em; text-decoration:none;">modern</a>
+      
     </div>
     
+    <div class="img-details" tabindex="-1" style="display:none; position:absolute; left:0; top:220px; width:100%; background:#fff; border:1px solid #ccc; border-radius:8px; box-shadow:0 2px 12px #0002; z-index:10; padding:16px; text-align:left;">
+      <b>Morning Reflections</b><br>
+      Size: <br>
+      Medium: <br>
+      Date: <br>
+      
+      <div style="margin-top:4px;">
+        
+          <span style="background:#eee; color:#333; border-radius:4px; padding:2px 6px; margin-right:4px; font-size:0.85em;">nature</span>
+        
+          <span style="background:#eee; color:#333; border-radius:4px; padding:2px 6px; margin-right:4px; font-size:0.85em;">minimal</span>
+        
+          <span style="background:#eee; color:#333; border-radius:4px; padding:2px 6px; margin-right:4px; font-size:0.85em;">modern</span>
+        
+      </div>
+      
+    </div>
   </div>
 
-  <div class="artist-card" data-city="Tel Aviv" data-area="" data-lat="32.0853" data-lon="34.7818" style="text-align:center; width:220px; margin-bottom:32px;">
-    <a href="/localart/artists/okundina/">
-      <img src="/localart/assets/artists/okundina/Screenshot%202025-06-22%20at%2014.35.11.png" alt="Olga Kundina" style="width:200px; height:200px; object-fit:cover; border-radius:8px; box-shadow:0 2px 8px #0001;" />
+  <div class="artist-card" data-city="Tel Aviv" data-lat="32.0853" data-lon="34.7818" data-tags="abstract,modern" style="text-align:center; width:220px; margin-bottom:32px; position:relative;">
+    <a href="/localart/artists/okundina/" style="display:inline-block;">
+      <span style="position:relative; display:inline-block;">
+        <img src="/localart/assets/artists/okundina/Screenshot%202025-06-22%20at%2014.34.32.png" alt="Olga Kundina" style="width:200px; height:200px; object-fit:cover; border-radius:8px; box-shadow:0 2px 8px #0001;" />
+      </span>
     </a>
     <div style="margin-top:8px; font-weight:bold; font-size:1.1em;">
       <a href="/localart/artists/okundina/" style="text-decoration:none; color:inherit;">Olga Kundina</a>
     </div>
     
-    <div style="font-size:0.9em; color:#666;">Silent Lake</div>
+    <div style="font-size:0.9em; color:#666;">Red Harmony</div>
     
     
-    <div style="font-size:0.85em; color:#888; margin-top:2px;">
-      Tel Aviv
+    <div style="margin-top:4px;">
+      
+        <a href="/localart/tags/abstract" style="background:#eee; color:#333; border-radius:4px; padding:2px 6px; margin-right:4px; font-size:0.85em; text-decoration:none;">abstract</a>
+      
+        <a href="/localart/tags/modern" style="background:#eee; color:#333; border-radius:4px; padding:2px 6px; margin-right:4px; font-size:0.85em; text-decoration:none;">modern</a>
+      
     </div>
     
+    <div class="img-details" tabindex="-1" style="display:none; position:absolute; left:0; top:220px; width:100%; background:#fff; border:1px solid #ccc; border-radius:8px; box-shadow:0 2px 12px #0002; z-index:10; padding:16px; text-align:left;">
+      <b>Red Harmony</b><br>
+      Size: <br>
+      Medium: <br>
+      Date: <br>
+      
+      <div style="margin-top:4px;">
+        
+          <span style="background:#eee; color:#333; border-radius:4px; padding:2px 6px; margin-right:4px; font-size:0.85em;">abstract</span>
+        
+          <span style="background:#eee; color:#333; border-radius:4px; padding:2px 6px; margin-right:4px; font-size:0.85em;">modern</span>
+        
+      </div>
+      
+    </div>
   </div>
 
 </div>
+<script>
+function showDetails(link) {
+  // Hide any open details
+  document.querySelectorAll('.img-details').forEach(function(d) { d.style.display = 'none'; });
+  var details = link.parentElement.querySelector('.img-details');
+  if (details) {
+    details.style.display = 'block';
+    details.focus();
+    // Hide on focus out
+    details.onblur = function() { details.style.display = 'none'; };
+  }
+}
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.artist-card')) {
+    document.querySelectorAll('.img-details').forEach(function(d) { d.style.display = 'none'; });
+  }
+});
+</script>

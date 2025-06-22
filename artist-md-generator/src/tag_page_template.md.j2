@@ -1,0 +1,32 @@
+# Artworks tagged with "{{ tag }}"
+
+<div id="tag-grid" style="display: flex; flex-wrap: wrap; gap: 32px; justify-content: flex-start;">
+{% for artwork in artworks %}
+  <div class="artist-card" style="text-align:center; width:220px; margin-bottom:32px; position:relative;">
+    <a href="{{ base_url }}/artists/{{ artwork.artist_slug }}/image/{{ artwork.image_file | urlencode | replace('.png', '') | replace('.jpg', '') | replace('.jpeg', '') | replace('.webp', '') }}" style="display:inline-block;">
+      <span style="position:relative; display:inline-block;">
+        <img src="{{ base_url }}/assets/artists/{{ artwork.artist_slug }}/{{ artwork.image_file | urlencode }}" alt="{{ artwork.artist_name }}" style="width:200px; height:200px; object-fit:cover; border-radius:8px; box-shadow:0 2px 8px #0001;" />
+      </span>
+    </a>
+    <div style="margin-top:8px; font-weight:bold; font-size:1.1em;">
+      <a href="{{ base_url }}/artists/{{ artwork.artist_slug }}.md" style="text-decoration:none; color:inherit;">{{ artwork.artist_name }}</a>
+    </div>
+    {% if artwork.image_title %}
+    <div style="font-size:0.9em; color:#666;">{{ artwork.image_title }}</div>
+    {% endif %}
+    {% if artwork.image_tags %}
+    <div style="margin-top:4px;">
+      {% for tag in artwork.image_tags %}
+        <a href="{{ base_url }}/tags/{{ tag }}" style="background:#eee; color:#333; border-radius:4px; padding:2px 6px; margin-right:4px; font-size:0.85em; text-decoration:none;">{{ tag }}</a>
+      {% endfor %}
+    </div>
+    {% endif %}
+    {% if artwork.image_price is defined %}
+      <div style="margin-top:4px; font-size:0.95em; color:#444;">
+        Price: ₪{{ artwork.image_price }}
+        {% if artwork.image_sold %}<span style="color:red; font-weight:bold;">(Sold)</span>{% endif %}
+      </div>
+    {% endif %}
+  </div>
+{% endfor %}
+</div>

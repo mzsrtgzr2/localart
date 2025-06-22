@@ -1,0 +1,20 @@
+site_name: "Localart | אומנות מקומית"
+site_url: https://mzsrtgzr2.github.io/localart/
+use_directory_urls: true
+
+nav:
+  - Search: index.md
+  - Artists:
+{% for artist in artists %}    - {{ artist.name }}: artists/{{ artist.slug }}.md
+{% endfor %}
+  - Tags:
+{% for tag in tags %}    - {{ tag }}: tags/{{ tag }}.md
+{% endfor %}
+
+theme:
+  name: material
+extra_css:
+  - stylesheets/extra.css
+
+plugins:
+  - search

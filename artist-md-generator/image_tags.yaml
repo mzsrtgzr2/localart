@@ -1,0 +1,17 @@
+# Allowed tags for artwork images
+allowed_tags:
+  - abstract
+  - landscape
+  - portrait
+  - modern
+  - classic
+  - surreal
+  - urban
+  - nature
+  - people
+  - animals
+  - digital
+  - traditional
+  - black_and_white
+  - colorful
+  - minimal

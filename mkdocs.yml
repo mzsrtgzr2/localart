@@ -2,6 +2,29 @@ site_name: "Localart | אומנות מקומית"
 site_url: https://mzsrtgzr2.github.io/localart/
 use_directory_urls: true
 
+nav:
+  - Search: index.md
+  - Artists:
+    - Moshe Roth: artists/mosheroth.md
+    - Olga Kundina: artists/okundina.md
+
+  - Tags:
+    - abstract: tags/abstract.md
+    - city: tags/city.md
+    - colorful: tags/colorful.md
+    - flowers: tags/flowers.md
+    - landscape: tags/landscape.md
+    - minimal: tags/minimal.md
+    - modern: tags/modern.md
+    - nature: tags/nature.md
+    - serene: tags/serene.md
+    - surreal: tags/surreal.md
+    - traditional: tags/traditional.md
+    - urban: tags/urban.md
+    - vibrant: tags/vibrant.md
+    - water: tags/water.md
+
+
 theme:
   name: material
 extra_css:
