@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run Artist Markdown Generator",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/artist-md-generator/src/generate_md.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}

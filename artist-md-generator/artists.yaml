@@ -1,0 +1,26 @@
+name: Artists List
+artists:
+  - name: "Moshe Roth"
+    slug: "mosheroth"
+    genre: "Modern"
+    biography: "Vincent van Gogh was a Dutch post-impressionist painter who is among the most famous and influential figures in the history of Western art."
+  
+  - name: "Pablo Picasso"
+    slug: "pablo_picasso"
+    genre: "Cubism"
+    biography: "Pablo Picasso was a Spanish painter, sculptor, printmaker, ceramicist, and stage designer who is regarded as one of the most influential artists of the 20th century."
+  
+  - name: "Frida Kahlo"
+    slug: "frida_kahlo"
+    genre: "Surrealism"
+    biography: "Frida Kahlo was a Mexican painter known for her self-portraits and works inspired by the nature and artifacts of Mexico."
+  
+  - name: "Leonardo da Vinci"
+    slug: "leonardo_da_vinci"
+    genre: "Renaissance"
+    biography: "Leonardo da Vinci was an Italian polymath of the High Renaissance who is widely considered one of the greatest painters of all time."
+  
+  - name: "Claude Monet"
+    slug: "claude_monet"
+    genre: "Impressionism"
+    biography: "Claude Monet was a French painter, and one of the founders of Impressionism, known for his landscape paintings."
