@@ -21,3 +21,20 @@
 .md-search__icon, .md-search__output {
   color: #222 !important;
 }
+
+/* Fix search bar z-index and position so it stays above the map and content */
+.md-search {
+  z-index: 1001 !important;
+  position: relative !important;
+}
+
+.md-search__form {
+  z-index: 1002 !important;
+  position: relative !important;
+}
+
+/* Prevent search bar from being overlapped by map or grid */
+.md-main__inner {
+  position: relative;
+  z-index: 1;
+}
