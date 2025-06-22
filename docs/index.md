@@ -87,14 +87,14 @@ function filterArtists() {
 <div id="artist-grid" style="display: flex; flex-wrap: wrap; gap: 32px; justify-content: flex-start;">
 
   <div class="artist-card" data-city="Hod Hasharon" data-area="" data-lat="32.1557" data-lon="34.8932" style="text-align:center; width:220px; margin-bottom:32px;">
-    <a href="/artists/mosheroth/">
-      <img src="/assets/artists/mosheroth/1.png" alt="Moshe Roth" style="width:200px; height:200px; object-fit:cover; border-radius:8px; box-shadow:0 2px 8px #0001;" />
+    <a href="/localart/artists/mosheroth/">
+      <img src="/localart/assets/artists/mosheroth/Screenshot%202025-06-03%20at%2022.39.08.png" alt="Moshe Roth" style="width:200px; height:200px; object-fit:cover; border-radius:8px; box-shadow:0 2px 8px #0001;" />
     </a>
     <div style="margin-top:8px; font-weight:bold; font-size:1.1em;">
-      <a href="/artists/mosheroth/" style="text-decoration:none; color:inherit;">Moshe Roth</a>
+      <a href="/localart/artists/mosheroth/" style="text-decoration:none; color:inherit;">Moshe Roth</a>
     </div>
     
-    <div style="font-size:0.9em; color:#666;">Sunset Over the Valley</div>
+    <div style="font-size:0.9em; color:#666;">Abstract Night</div>
     
     
     <div style="font-size:0.85em; color:#888; margin-top:2px;">
@@ -104,11 +104,11 @@ function filterArtists() {
   </div>
 
   <div class="artist-card" data-city="Tel Aviv" data-area="" data-lat="32.0853" data-lon="34.7818" style="text-align:center; width:220px; margin-bottom:32px;">
-    <a href="/artists/okundina/">
-      <img src="/assets/artists/okundina/Screenshot%202025-06-22%20at%2014.35.11.png" alt="Olga Kundina" style="width:200px; height:200px; object-fit:cover; border-radius:8px; box-shadow:0 2px 8px #0001;" />
+    <a href="/localart/artists/okundina/">
+      <img src="/localart/assets/artists/okundina/Screenshot%202025-06-22%20at%2014.35.11.png" alt="Olga Kundina" style="width:200px; height:200px; object-fit:cover; border-radius:8px; box-shadow:0 2px 8px #0001;" />
     </a>
     <div style="margin-top:8px; font-weight:bold; font-size:1.1em;">
-      <a href="/artists/okundina/" style="text-decoration:none; color:inherit;">Olga Kundina</a>
+      <a href="/localart/artists/okundina/" style="text-decoration:none; color:inherit;">Olga Kundina</a>
     </div>
     
     <div style="font-size:0.9em; color:#666;">Silent Lake</div>

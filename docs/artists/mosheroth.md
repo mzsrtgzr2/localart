@@ -14,8 +14,8 @@ Vincent van Gogh was a Dutch post-impressionist painter who is among the most fa
 <div style="display: flex; flex-wrap: wrap; gap: 16px;">
 
   <div style="text-align:center; margin-bottom:16px;">
-    <a href="/assets/artists/mosheroth/1.png" target="_blank">
-      <img src="/assets/artists/mosheroth/1.png" alt="Moshe Roth" style="width:200px; height:auto; object-fit:cover; border-radius:8px; display:block; margin:0 auto;" />
+    <a href="/localart/assets/artists/mosheroth/1.png" target="_blank">
+      <img src="/localart/assets/artists/mosheroth/1.png" alt="Moshe Roth" style="width:200px; height:auto; object-fit:cover; border-radius:8px; display:block; margin:0 auto;" />
     </a>
     <div style="font-size:0.9em; margin-top:4px;">
       <b>Sunset Over the Valley</b><br>
@@ -26,8 +26,8 @@ Vincent van Gogh was a Dutch post-impressionist painter who is among the most fa
   </div>
 
   <div style="text-align:center; margin-bottom:16px;">
-    <a href="/assets/artists/mosheroth/2.png" target="_blank">
-      <img src="/assets/artists/mosheroth/2.png" alt="Moshe Roth" style="width:200px; height:auto; object-fit:cover; border-radius:8px; display:block; margin:0 auto;" />
+    <a href="/localart/assets/artists/mosheroth/2.png" target="_blank">
+      <img src="/localart/assets/artists/mosheroth/2.png" alt="Moshe Roth" style="width:200px; height:auto; object-fit:cover; border-radius:8px; display:block; margin:0 auto;" />
     </a>
     <div style="font-size:0.9em; margin-top:4px;">
       <b>Morning Reflections</b><br>
@@ -38,8 +38,8 @@ Vincent van Gogh was a Dutch post-impressionist painter who is among the most fa
   </div>
 
   <div style="text-align:center; margin-bottom:16px;">
-    <a href="/assets/artists/mosheroth/Screenshot%202025-06-03%20at%2022.39.08.png" target="_blank">
-      <img src="/assets/artists/mosheroth/Screenshot%202025-06-03%20at%2022.39.08.png" alt="Moshe Roth" style="width:200px; height:auto; object-fit:cover; border-radius:8px; display:block; margin:0 auto;" />
+    <a href="/localart/assets/artists/mosheroth/Screenshot%202025-06-03%20at%2022.39.08.png" target="_blank">
+      <img src="/localart/assets/artists/mosheroth/Screenshot%202025-06-03%20at%2022.39.08.png" alt="Moshe Roth" style="width:200px; height:auto; object-fit:cover; border-radius:8px; display:block; margin:0 auto;" />
     </a>
     <div style="font-size:0.9em; margin-top:4px;">
       <b>Abstract Night</b><br>

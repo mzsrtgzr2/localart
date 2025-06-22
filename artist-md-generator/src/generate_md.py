@@ -53,6 +53,7 @@ def generate_markdown(artist, template):
         if username:
             instagram_url = f"https://instagram.com/{username}"
             instagram_img = fetch_instagram_profile_image(username)
+    # Set base_url for all pages to '/localart'
     data = {
         'name': artist['name'],
         'genre': artist.get('genre', 'Unknown'),
@@ -63,7 +64,8 @@ def generate_markdown(artist, template):
         'slug': artist.get('slug', artist['name'].replace(' ', '_').lower()),
         'images': artist.get('images', []),
         'instagram_url': instagram_url,
-        'instagram_img': instagram_img
+        'instagram_img': instagram_img,
+        'base_url': '/localart',
     }
     return template.render(**data)
 
@@ -128,7 +130,7 @@ def generate_index_md(artists, output_path, env, city_coords):
     # Render index
     template = env.get_template('index_template.md.j2')
     with open(output_path, 'w') as f:
-        f.write(template.render(showcase=showcase, cities=sorted(cities), areas=sorted(areas), map_points=map_points))
+        f.write(template.render(showcase=showcase, cities=sorted(cities), areas=sorted(areas), map_points=map_points, base_url='/localart'))
 
 
 def main():

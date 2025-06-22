@@ -14,8 +14,8 @@ Olga Kundina is a contemporary artist known for her vibrant use of color
 <div style="display: flex; flex-wrap: wrap; gap: 16px;">
 
   <div style="text-align:center; margin-bottom:16px;">
-    <a href="/assets/artists/okundina/Screenshot%202025-06-22%20at%2014.34.20.png" target="_blank">
-      <img src="/assets/artists/okundina/Screenshot%202025-06-22%20at%2014.34.20.png" alt="Olga Kundina" style="width:200px; height:auto; object-fit:cover; border-radius:8px; display:block; margin:0 auto;" />
+    <a href="/localart/assets/artists/okundina/Screenshot%202025-06-22%20at%2014.34.20.png" target="_blank">
+      <img src="/localart/assets/artists/okundina/Screenshot%202025-06-22%20at%2014.34.20.png" alt="Olga Kundina" style="width:200px; height:auto; object-fit:cover; border-radius:8px; display:block; margin:0 auto;" />
     </a>
     <div style="font-size:0.9em; margin-top:4px;">
       <b>Blue Dream</b><br>
@@ -26,8 +26,8 @@ Olga Kundina is a contemporary artist known for her vibrant use of color
   </div>
 
   <div style="text-align:center; margin-bottom:16px;">
-    <a href="/assets/artists/okundina/Screenshot%202025-06-22%20at%2014.34.32.png" target="_blank">
-      <img src="/assets/artists/okundina/Screenshot%202025-06-22%20at%2014.34.32.png" alt="Olga Kundina" style="width:200px; height:auto; object-fit:cover; border-radius:8px; display:block; margin:0 auto;" />
+    <a href="/localart/assets/artists/okundina/Screenshot%202025-06-22%20at%2014.34.32.png" target="_blank">
+      <img src="/localart/assets/artists/okundina/Screenshot%202025-06-22%20at%2014.34.32.png" alt="Olga Kundina" style="width:200px; height:auto; object-fit:cover; border-radius:8px; display:block; margin:0 auto;" />
     </a>
     <div style="font-size:0.9em; margin-top:4px;">
       <b>Red Harmony</b><br>
@@ -38,8 +38,8 @@ Olga Kundina is a contemporary artist known for her vibrant use of color
   </div>
 
   <div style="text-align:center; margin-bottom:16px;">
-    <a href="/assets/artists/okundina/Screenshot%202025-06-22%20at%2014.34.47.png" target="_blank">
-      <img src="/assets/artists/okundina/Screenshot%202025-06-22%20at%2014.34.47.png" alt="Olga Kundina" style="width:200px; height:auto; object-fit:cover; border-radius:8px; display:block; margin:0 auto;" />
+    <a href="/localart/assets/artists/okundina/Screenshot%202025-06-22%20at%2014.34.47.png" target="_blank">
+      <img src="/localart/assets/artists/okundina/Screenshot%202025-06-22%20at%2014.34.47.png" alt="Olga Kundina" style="width:200px; height:auto; object-fit:cover; border-radius:8px; display:block; margin:0 auto;" />
     </a>
     <div style="font-size:0.9em; margin-top:4px;">
       <b>Golden Fields</b><br>
@@ -50,8 +50,8 @@ Olga Kundina is a contemporary artist known for her vibrant use of color
   </div>
 
   <div style="text-align:center; margin-bottom:16px;">
-    <a href="/assets/artists/okundina/Screenshot%202025-06-22%20at%2014.34.57.png" target="_blank">
-      <img src="/assets/artists/okundina/Screenshot%202025-06-22%20at%2014.34.57.png" alt="Olga Kundina" style="width:200px; height:auto; object-fit:cover; border-radius:8px; display:block; margin:0 auto;" />
+    <a href="/localart/assets/artists/okundina/Screenshot%202025-06-22%20at%2014.34.57.png" target="_blank">
+      <img src="/localart/assets/artists/okundina/Screenshot%202025-06-22%20at%2014.34.57.png" alt="Olga Kundina" style="width:200px; height:auto; object-fit:cover; border-radius:8px; display:block; margin:0 auto;" />
     </a>
     <div style="font-size:0.9em; margin-top:4px;">
       <b>Urban Flow</b><br>
@@ -62,8 +62,8 @@ Olga Kundina is a contemporary artist known for her vibrant use of color
   </div>
 
   <div style="text-align:center; margin-bottom:16px;">
-    <a href="/assets/artists/okundina/Screenshot%202025-06-22%20at%2014.35.11.png" target="_blank">
-      <img src="/assets/artists/okundina/Screenshot%202025-06-22%20at%2014.35.11.png" alt="Olga Kundina" style="width:200px; height:auto; object-fit:cover; border-radius:8px; display:block; margin:0 auto;" />
+    <a href="/localart/assets/artists/okundina/Screenshot%202025-06-22%20at%2014.35.11.png" target="_blank">
+      <img src="/localart/assets/artists/okundina/Screenshot%202025-06-22%20at%2014.35.11.png" alt="Olga Kundina" style="width:200px; height:auto; object-fit:cover; border-radius:8px; display:block; margin:0 auto;" />
     </a>
     <div style="font-size:0.9em; margin-top:4px;">
       <b>Silent Lake</b><br>
@@ -74,8 +74,8 @@ Olga Kundina is a contemporary artist known for her vibrant use of color
   </div>
 
   <div style="text-align:center; margin-bottom:16px;">
-    <a href="/assets/artists/okundina/Screenshot%202025-06-22%20at%2014.35.46.png" target="_blank">
-      <img src="/assets/artists/okundina/Screenshot%202025-06-22%20at%2014.35.46.png" alt="Olga Kundina" style="width:200px; height:auto; object-fit:cover; border-radius:8px; display:block; margin:0 auto;" />
+    <a href="/localart/assets/artists/okundina/Screenshot%202025-06-22%20at%2014.35.46.png" target="_blank">
+      <img src="/localart/assets/artists/okundina/Screenshot%202025-06-22%20at%2014.35.46.png" alt="Olga Kundina" style="width:200px; height:auto; object-fit:cover; border-radius:8px; display:block; margin:0 auto;" />
     </a>
     <div style="font-size:0.9em; margin-top:4px;">
       <b>Spring Garden</b><br>

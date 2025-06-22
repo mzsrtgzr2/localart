@@ -1,5 +1,7 @@
 site_name: "Localart | אומנות מקומית"
 site_url: https://mzsrtgzr2.github.io/localart/
+use_directory_urls: true
+
 theme:
   name: material
 extra_css:

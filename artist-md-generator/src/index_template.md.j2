@@ -87,11 +87,11 @@ function filterArtists() {
 <div id="artist-grid" style="display: flex; flex-wrap: wrap; gap: 32px; justify-content: flex-start;">
 {% for entry in showcase %}
   <div class="artist-card" data-city="{{ entry.city }}" data-area="{{ entry.area }}" data-lat="{{ entry.lat }}" data-lon="{{ entry.lon }}" style="text-align:center; width:220px; margin-bottom:32px;">
-    <a href="/artists/{{ entry.slug }}/">
-      <img src="/assets/artists/{{ entry.slug }}/{{ entry.img_file | urlencode }}" alt="{{ entry.artist_name }}" style="width:200px; height:200px; object-fit:cover; border-radius:8px; box-shadow:0 2px 8px #0001;" />
+    <a href="{{ base_url }}/artists/{{ entry.slug }}/">
+      <img src="{{ base_url }}/assets/artists/{{ entry.slug }}/{{ entry.img_file | urlencode }}" alt="{{ entry.artist_name }}" style="width:200px; height:200px; object-fit:cover; border-radius:8px; box-shadow:0 2px 8px #0001;" />
     </a>
     <div style="margin-top:8px; font-weight:bold; font-size:1.1em;">
-      <a href="/artists/{{ entry.slug }}/" style="text-decoration:none; color:inherit;">{{ entry.artist_name }}</a>
+      <a href="{{ base_url }}/artists/{{ entry.slug }}/" style="text-decoration:none; color:inherit;">{{ entry.artist_name }}</a>
     </div>
     {% if entry.img_title %}
     <div style="font-size:0.9em; color:#666;">{{ entry.img_title }}</div>
